@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparaten overzicht</title>
+    <style>
+        /* Algemene kenmerken van het grid */
+        .grid {
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        /* grid-column-gap: 5%;
+        grid-row-gap: 5%; */
+        grid-gap:5%; /*
+        grid-auto-rows: minmax(50px, auto) /*De minimum hoogte is 50px en het word groter als er iets in zit dat groter is dan 50px */
+    }
+    
+    /* De inhoud van een 'cell' (cell is een van de blokjes van het grid) */
+    .nested{
+        display:grid;
+        grid-template: 1fr 3fr 1fr
+    }
+
+    /* Algemene kenmerken van de divs in het grid (em is alle zijden) */
+    .grid > div{
+        background: #008000;
+        padding: 1em;
+    }
+    
+    /* Een odd element heeft een andere kleur groen (19 Normaal, 25 oddkleur)*/
+    .grid > div:nth-child(odd){
+        background: #33ff33;
+    }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="nested">
+            <div>Apparaat naam</div>
+            <div>Afbeelding</div>
+            <div>Leen uit</div>
+        </div>
+        <div>
+        
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vero.
+        </div>
+    </div>
+</body>
+</html>
