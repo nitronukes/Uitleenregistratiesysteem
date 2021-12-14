@@ -3,7 +3,7 @@
 $server = "localhost";
 $user = "root";
 $pass = "";
-$dbname = "userregistratiesysteem";
+$dbname = "uitleenregistratiesysteem";
 
 $conn = mysqli_connect($server, $user, $pass, $dbname);
 
