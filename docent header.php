@@ -139,7 +139,7 @@ ul.topnav li {float: left;}
       </a></li>
 
       <li><a><div class="dropdown">
-        <button class="dropbtn">apparatuuroverzicht</button>
+        <button < a href="Apparaten overzicht.php" a> class="dropbtn">apparatuuroverzicht</button>
        </a></li>
     
       <li><a><div class="dropdown">
