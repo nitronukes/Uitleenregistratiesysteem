@@ -13,7 +13,7 @@
         <div class="nested">
             <div>Apparaat naam</div>
             <div>Afbeelding</div>
-            <div>
+            <div> 
                 <p>Leen uit</p>
                 <p>Beschikbaar</p>
             </div>
