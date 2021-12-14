@@ -1,4 +1,3 @@
-
 <?php 
 
 include 'configure.php';
@@ -11,19 +10,20 @@ session_start();
 
 if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
-	$password = ($_POST['password']);
+	$password = $_POST['password'];
 
-	$sql = "SELECT * FROM users WHERE `username`='$username' AND `password`='$password'";
+	$sql = "SELECT * FROM users WHERE `email`='$email' AND `Wachtwoord`='$password'";
 	$result = mysqli_query($conn, $sql);
 	if ($result->num_rows > 0) {
 		$row = mysqli_fetch_assoc($result);
 		$_SESSION['username'] = $row['username'];
-		header("Location: ");
+		header("Location: welcome.php");
 	} else {
 		echo "<script>alert('Woops! Email of wachtwoord is fout.')</script>";
 	}
 }
 
+	
 
 
 ?>
@@ -45,15 +45,15 @@ if (isset($_POST['submit'])) {
 		<form action="" method="POST" class="login-email">
 			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
 			<div class="input-group">
-				<input type="username" placeholder="username" name="username" value="<?php echo $username; ?>" required>
+				<input type="email" placeholder="email" name="email"  required>
 			</div>
 			<div class="input-group">
-				<input type="password" placeholder="password" name="password" value="<?php echo $_POST['password']; ?>" required>
+				<input type="password" placeholder="password" name="password"  required>
 			</div>
 			<div class="input-group">
 				<button name="submit" class="btn">Login</button>
 			</div>
-			<p class="login-text">Ga <a class="particulieren-text" href="welcome.php">hier</a> verder als je geen docent bent .</p>
+			<p class="login-text">Ga <a class="particulieren-text" href="welcome.php">hier</a> verder zonder account .</p>
 		</form>
 	</div>
 </body>
