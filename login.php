@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
 			<div class="input-group">
 				<button name="submit" class="btn">Login</button>
 			</div>
-			<p class="login-text">Ga <a class="particulieren-text" href="welcome.php">hier</a> verder zonder account .</p>
+			<p class="login-text">Ben je geen docent? Klik <a class="particulieren-text" href="welcome.php">hier</a> verder zonder account .</p>
 		</form>
 	</div>
 </body>
