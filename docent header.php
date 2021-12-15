@@ -90,7 +90,7 @@ ul.topnav li {float: left;}
 .dropdown {
   position: relative;
   display:contents;
-}
+  }
 /* de styling van de drowpdown zelf*/
 .dropdown-content {
   display: none;
@@ -134,7 +134,7 @@ ul.topnav li {float: left;}
   <li><img src="https://media.giphy.com/avatars/roc-friesepoort/e5oiChR3SQz6.png"   width="150" height="122">
   <!-- text in het "nieuw" tab-->
     <li><a><div class="dropdown">
-      <a class="dropbtna">nieuw<a>
+      <a class="dropbtna">nieuw</a>
       <div class="dropdown-content">
         <a href="#">nieuw</a>
         <a href="#">apparaat</a>
@@ -167,7 +167,8 @@ ul.topnav li {float: left;}
       <br>
       <br>
       <div class="dropdown">
-      <a href="login.php" class="loguit"type="submit" >log uit</a>
+      <a href="login.php" class="loguit"type="submit" style="color: black ;" text-decoration: >log uit</a>
+      
     </div></div>
   </div>
   </a>
