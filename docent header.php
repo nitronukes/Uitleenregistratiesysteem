@@ -96,7 +96,6 @@ ul.topnav li {float: left;}
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: ;
   box-shadow: 0px 18px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -112,6 +111,10 @@ ul.topnav li {float: left;}
 /* log uit knop*/
 .loguit{
   float: right;
+  border: 2px black solid;
+  background-color: white;
+  position: absolute;
+  right :20px ;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
@@ -129,9 +132,9 @@ ul.topnav li {float: left;}
 
 <ul class="topnav">
   <li><img src="https://media.giphy.com/avatars/roc-friesepoort/e5oiChR3SQz6.png"   width="150" height="122">
-  <!-- text hiet "nieuw" tab-->
+  <!-- text in het "nieuw" tab-->
     <li><a><div class="dropdown">
-      <button class="dropbtna">nieuw</button>
+      <a class="dropbtna">nieuw<a>
       <div class="dropdown-content">
         <a href="#">nieuw</a>
         <a href="#">apparaat</a>
@@ -139,15 +142,15 @@ ul.topnav li {float: left;}
       </a></li>
 
       <li><a><div class="dropdown">
-        <button < a href="Apparaten overzicht.php" a> class="dropbtn">apparatuuroverzicht</button>
+        <a href="Apparaten overzicht.php"class="dropbtn">apparatuuroverzicht <a> 
        </a></li>
     
       <li><a><div class="dropdown">
-          <button class="dropbtn">uitleenoverzicht</button>
+           <a href="uitleenoverzicht.php" class="dropbtn">uitleenoverzicht
        </a></li>   
 
   <li><a><div class="dropdown">
-    <button class="dropbtna">sorteer V</button>
+    <a class="dropbtna">sorteer V</a>
     <div class="dropdown-content">
       <a href="#">beschikbaarheid</a>
       <a href="#">uitgeleend</a>
@@ -155,7 +158,7 @@ ul.topnav li {float: left;}
    
 
     <li><a><div class="dropdown">
-      <button class="dropbtna">categorien V</button>
+      <a class="dropbtna">categorien V</a>
       <div class="dropdown-content">
     
       </a></li>
@@ -164,7 +167,7 @@ ul.topnav li {float: left;}
       <br>
       <br>
       <div class="dropdown">
-      <button class="loguit"type="submit" >log uit</button>
+      <a href="login.php" class="loguit"type="submit" >log uit</a>
     </div></div>
   </div>
   </a>
