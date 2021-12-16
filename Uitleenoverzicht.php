@@ -31,6 +31,8 @@ echo "
  
  if ($result) {
     foreach ($result as $row) {
+    //body van de tabel
+
     echo "
     <tr>
         <td>" . $row['Naam']  . "</td>

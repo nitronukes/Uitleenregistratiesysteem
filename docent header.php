@@ -4,18 +4,23 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<body>
 <style>
+{background-color: black;
+}
 body {margin: 0;}
 
 
-
-
+*{
+  background: black;
+}
 
 
 
 /* het logo*/
 img {
-  border: 3px solid #0DBDE0;
+  padding-left:100px ;
+  border-radius: 50%;
  
 }
 /*styling van de zoek bar*/
@@ -57,7 +62,7 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #A4A7A8;
+  background-color: white;
 }
 ul.topnav li {float: left;}
 /* de positie van de onderstreepte tabs*/
@@ -67,7 +72,7 @@ ul.topnav li {float: left;}
 }
 /* tabs met een lijn eronder*/
 .dropbtn {
-  background-color: #A4A7A8;
+  background-color: white;
   color: rgb(0, 0, 0);
   padding: 16px;
   font-size: 16px;
@@ -77,7 +82,7 @@ ul.topnav li {float: left;}
 /* tabs zonder een lijn*/
 }
 .dropbtna {
-  background-color: #A4A7A8;
+  background-color: white;
   color: rgb(0, 0, 0);
   padding: 16px;
   font-size: 16px;
@@ -90,13 +95,12 @@ ul.topnav li {float: left;}
 .dropdown {
   position: relative;
   display:contents;
-}
+  }
 /* de styling van de drowpdown zelf*/
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: ;
   box-shadow: 0px 18px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -112,6 +116,10 @@ ul.topnav li {float: left;}
 /* log uit knop*/
 .loguit{
   float: right;
+  border: 2px black solid;
+  background-color: white;
+  position: absolute;
+  right :20px ;
 }
 
 .dropdown-content a:hover {background-color: #ddd;}
@@ -129,9 +137,9 @@ ul.topnav li {float: left;}
 
 <ul class="topnav">
   <li><img src="https://media.giphy.com/avatars/roc-friesepoort/e5oiChR3SQz6.png"   width="150" height="122">
-  <!-- text hiet "nieuw" tab-->
+  <!-- text in het "nieuw" tab-->
     <li><a><div class="dropdown">
-      <button class="dropbtna">nieuw</button>
+      <a class="dropbtna">nieuw</a>
       <div class="dropdown-content">
         <a href="#">nieuw</a>
         <a href="#">apparaat</a>
@@ -139,15 +147,15 @@ ul.topnav li {float: left;}
       </a></li>
 
       <li><a><div class="dropdown">
-        <button < a href="Apparaten overzicht.php" a> class="dropbtn">apparatuuroverzicht</button>
+        <a href="Apparaten overzicht.php"class="dropbtn">apparatuuroverzicht <a> 
        </a></li>
     
       <li><a><div class="dropdown">
-          <button class="dropbtn">uitleenoverzicht</button>
+           <a href="uitleenoverzicht.php" class="dropbtn">uitleenoverzicht
        </a></li>   
 
   <li><a><div class="dropdown">
-    <button class="dropbtna">sorteer V</button>
+    <a class="dropbtna">sorteer V</a>
     <div class="dropdown-content">
       <a href="#">beschikbaarheid</a>
       <a href="#">uitgeleend</a>
@@ -155,7 +163,7 @@ ul.topnav li {float: left;}
    
 
     <li><a><div class="dropdown">
-      <button class="dropbtna">categorien V</button>
+      <a class="dropbtna">categorien V</a>
       <div class="dropdown-content">
     
       </a></li>
@@ -164,7 +172,8 @@ ul.topnav li {float: left;}
       <br>
       <br>
       <div class="dropdown">
-      <button class="loguit"type="submit" >log uit</button>
+      <a href="login.php" class="loguit"type="submit" style="color: black" ; background-color:#DC0606; text-decoration:none; >log uit</a>
+      
     </div></div>
   </div>
   </a>
