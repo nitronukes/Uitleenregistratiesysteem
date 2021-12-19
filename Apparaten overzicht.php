@@ -1,23 +1,31 @@
 <?php
+
+
 Include "configure.php";
 $retouneerdatum = $_POST['Retouneer']; 
 $sql = "INSERT INTO `uitleen`(`Docent`, `Naam`, `Inleverdatum`) VALUES (?,?,?)";
 
+if (isset($_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer'])) {
 $insert = $conn ->prepare($sql);
 $insert->bind_param('sss', $_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer']);
 
-if ($insert->execute())  {
-  echo "
-    <center>
-     <body style='font-size:x-large;'>
-     Apparaat is uit geleent.
-      <br>
-      <strong>Retouneer datum: $retouneerdatum </strong>
+//steefan
+// if (!$_POST['Retouneer']){
+  if ($insert->execute())  {
+    echo "
+      <center>
+      <body style='font-size:x-large;'>
+      Apparaat is uit geleent.
         <br>
-      </div>
-    </center>";
+        <strong>Retouneer datum: $retouneerdatum </strong>
+          <br>
+        </div>
+      </center>";
 }
+}
+
 echo "<div class='apparatencontainer'>";
+
     $sql = "SELECT * FROM apparaten";
     if ($result = $conn->query($sql)) {
       foreach ($result as $row) {
@@ -52,7 +60,7 @@ $conn->close();
     
 <div class="form-popup" id="myForm">
   <form action="Apparaten overzicht.php" method="POST" class="form-apparaten-overzicht">
-    <h1>$apparaat</h1>
+    <h1></h1>
 
 
     <input type="text" placeholder="Naam Docent" name="Docent" required>
