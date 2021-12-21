@@ -158,6 +158,7 @@
   
   
   /*Begin apparaten overzicht docent-------------------------------------------------- */
+  /* De grid/lay out van apparaten overzicht*/
   .apparatencontainer {
     display: grid;
     grid-template-columns: 1fr;
@@ -171,11 +172,11 @@
       text-align: center;
       margin: 10px;
       
-  }
+  }/* De grid/lay out van de apparaten in apparatenoverzicht*/
   .nested {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 10fr 2fr;
+    grid-template-rows: 1fr 1fr 10fr 2fr;
     grid-auto-columns: 1fr 1fr 1fr;
     gap: 0px 20px;
     grid-auto-flow: row;
@@ -185,7 +186,7 @@
       ".";
       border: 5px solid black;
 
-    }   
+    }/* Alle div in een div die de class nested heeft komt dit*/   
   .nested>div {
 
 border-top: 2.5px solid black;
@@ -194,7 +195,7 @@ background-color: gray;
 
 
   }
-
+/* responsiveheid van het grid*/
   @media screen and (min-width: 745px) {
     .apparatencontainer {
       display: grid;
@@ -211,3 +212,71 @@ background-color: gray;
         
     }
   }
+
+  /* Knop om pop-up te openen */
+.open-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  width: 20%;
+  border-radius: 5px ;
+}
+
+/* De pop-up */
+.form-popup {
+  display: none;
+  position: fixed;
+  border: 3px solid black;
+  left: 40%;
+  top: 20%;
+  width: 20%;
+  
+}
+
+/* Style van het formulier */
+.form-apparaten-overzicht {
+  width: 92.5%;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Style van input troep */
+.form-apparaten-overzicht input[type=text]{
+  width: 100%;
+  padding: 5%;
+  margin: 1% 0 5% 0;
+  border: none;
+  background: #c0c0c0;
+}
+
+
+/* Style van de leen uit button */
+.btn-AO {
+  background-color: #505050;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Style van de Sluit button */
+.btn-cancel-AO {
+    background-color: rgb(75, 75, 75);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Hover bij de buttons */
+.btn-cancel-AO:hover, .btn-AO:hover {
+  opacity: 1;
+}
