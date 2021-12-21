@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="Uitleenoverzicht.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
+
 </head>
 <body>
     <?php
@@ -44,40 +45,50 @@ echo "
         <td>" . $row['Apparaat'] . "</td>
         <td>" . $row['uitleendatum'] . "</td>
         <td>". $row['inleverdatum'] . "</td>
-        <td> <i style='color:green;' class='fas fa-file-upload knop' onclick='openForm()'></i> </td>
+        <td> <a style='color:green; font-size: 1.2em'; class='fas fa-file-upload knop' href='#myForm?apparaat=" . $row['Apparaat'] . "'></a> </td>
 
      
 
     <tbody>
 
   ";
-    }
-}
+ 
 
-?>
-<div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-apparaten-overzicht">
-    <h1>$apparaat</h1>
+echo'
+<div class="form-popup" id="myForm?apparaat=' . $row["Apparaat"] . '">
+  <form action="" method="POST" class="Lever-in">
 
 
-    <input type="text" placeholder="Naam Docent" name="Docent" required>
+   <textarea class="opmerking" placeholder="Opmerking" name="opmerking" ></textarea> <br> <br> <br>
 
-    <input type="text" placeholder="Leerlingnummer" name="Leerlingnmr" required>
-
-    <input type="text" placeholder="Retouneer datum" name="Retouneer" required>
-
-    <button type="submit" class="btn-AO">Leen uit</button>
-    <button type="button" class="btn-cancel-AO" onclick="closeForm()">Sluit</button>
+    <button name="submit" class="leverinknop">Lever in</button>
+    <a type="button" class="sluitknop" href="#">&times;</a>
   </form>
 </div>
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
 </body>
 </html>
+  ';
+  
+
+if (isset($_POST['submit'])) {
+
+  $opmerking=$_POST['opmerking'];
+  $apparaat= $_GET['apparaat'] ;
+
+
+  $sql = "INSERT INTO `apparaten`(`Apparaatnaam`, `opmerking`) VALUES ('$apparaat', '$opmerking')";
+    
+  $insert = $conn->query($sql);
+
+  if ( $insert ) {
+
+    $sql3 = "DELETE FROM `uitleen` WHERE `Apparaat`='$apparaat'";
+    $delete = $conn->query($sql3);
+
+  }
+
+}}}
+
+$conn->close();
+?>
