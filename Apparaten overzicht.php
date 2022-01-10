@@ -36,7 +36,7 @@ echo "<div class='apparatencontainer'>";
             <div>" . $row['Apparaatnaam'] . "</div>
             <div>Afbeelding</div>
             <div> 
-                <button class='open-button' onclick='openForm()'>Leen uit</button>
+                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>
                 <p>Beschikbaar</p>
             </div>
       </div>";
@@ -72,19 +72,11 @@ $conn->close();
     <input type="text" placeholder="Retouneer datum" name="Retouneer" required>
 
     <button type="submit" class="btn-AO">Leen uit</button>
-    <button type="button" class="btn-cancel-AO" onclick="closeForm()">Sluit</button>
+    <a type="button" class="btn-cancel-AO" href="#">Sluit</a>
   </form>
 </div>
 
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
 
 </body>
 </html>
