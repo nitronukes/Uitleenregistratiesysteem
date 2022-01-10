@@ -171,6 +171,8 @@
       ". . .";
       text-align: center;
       margin: 10px;
+      font-family: 'Montserrat', sans-serif;
+
       
   }/* De grid/lay out van de apparaten in apparatenoverzicht*/
   .nested {
@@ -185,13 +187,15 @@
       "."
       ".";
       border: 5px solid black;
+      border-radius: 10px;
+    
 
     }/* Alle div in een div die de class nested heeft komt dit*/   
   .nested>div {
 
 border-top: 2.5px solid black;
 border-bottom: 2.5px solid black;
-background-color: gray;
+background-color: rgb(89, 197, 216);
 
 
   }
@@ -237,14 +241,14 @@ background-color: gray;
 
 /* Style van het formulier */
 .form-apparaten-overzicht {
-  width: 92.5%;
+  width: 92.5%  ;
   padding: 10px;
   background-color: white;
 }
 
 /* Style van input troep */
 .form-apparaten-overzicht input[type=text]{
-  width: 100%;
+  width: 90%;
   padding: 5%;
   margin: 1% 0 5% 0;
   border: none;

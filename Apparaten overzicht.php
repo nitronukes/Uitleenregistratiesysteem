@@ -30,6 +30,7 @@ echo "<div class='apparatencontainer'>";
     if ($result = $conn->query($sql)) {
       foreach ($result as $row) {
       echo "
+      
       <div class='nested'>
             <div>" . $row['Categorie'] . "</div>
             <div>" . $row['Apparaatnaam'] . "</div>
@@ -37,7 +38,8 @@ echo "<div class='apparatencontainer'>";
             <div> 
                 <button class='open-button' onclick='openForm()'>Leen uit</button>
                 <p>Beschikbaar</p>
-            </div>";
+            </div>
+      </div>";
       }}
     echo "</div>";
       
