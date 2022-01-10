@@ -7,6 +7,9 @@
 </head>
 <body>
     <?php
+
+include 'header.html';
+
 //connectie maken met de database 
 include 'configure.php';
 
@@ -92,6 +95,6 @@ if (isset($_POST['submit'])) {
         header("location:#");
 
   }}}}}
-
-$conn->close();
 ?>
+
+
