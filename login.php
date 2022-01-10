@@ -1,59 +1,99 @@
 <?php 
 
-include 'configure.php';
-
 session_start();
 
+	include("connection.php");
+	include("functions.php");
 
 
+	if($_SERVER['REQUEST_METHOD'] == "POST")
+	{
+		//iets word gepost
+		$user_name = $_POST['user_name'];
+		$password = $_POST['password'];
 
+		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+		{
 
-if (isset($_POST['submit'])) {
-	$email = $_POST['email'];
-	$password = $_POST['password'];
+			//lezen van database
+			$query = "select * from users where user_name = '$user_name' limit 1";
+			$result = mysqli_query($con, $query);
 
-	$sql = "SELECT * FROM users WHERE `email`='$email' AND `Wachtwoord`='$password'";
-	$result = mysqli_query($conn, $sql);
-	if ($result->num_rows > 0) {
-		$row = mysqli_fetch_assoc($result);
-		$_SESSION['username'] = $row['username'];
-		header("Location: welcome.php");
-	} else {
-		echo "<script>alert('Woops! Email of wachtwoord is fout.')</script>";
+			if($result)
+			{
+				if($result && mysqli_num_rows($result) > 0)
+				{
+
+					$user_data = mysqli_fetch_assoc($result);
+					
+					if($user_data['password'] === $password)
+					{
+
+						$_SESSION['user_id'] = $user_data['user_id'];
+						header("Location: indexx.php");
+						die;
+					}
+				}
+			}
+			
+			echo "wrong username or password!";
+		}else
+		{
+			echo "wrong username or password!";
+		}
 	}
-}
-
-	
-
 
 ?>
+
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<link rel="stylesheet" type="text/css" href="login.css">
-
-	<title>Login Form</title>
+	<title>Login</title>
 </head>
-<body class="lichaam">
-	<div class="container">
-		<form action="" method="POST" class="login-email">
-			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
-			<div class="input-group">
-				<input type="email" placeholder="email" name="email"  required>
-			</div>
-			<div class="input-group">
-				<input type="password" placeholder="password" name="password"  required>
-			</div>
-			<div class="input-group">
-				<button name="submit" class="btn">Login</button>
-			</div>
-			<p class="login-text">Ben je geen docent? Klik <a class="particulieren-text" href="welcome.php">hier</a> verder zonder account .</p>
+<body>
+
+	<style type="text/css">
+	
+	#text{
+
+		height: 25px;
+		border-radius: 5px;
+		padding: 4px;
+		border: solid thin #aaa;
+		width: 100%;
+	}
+
+	#button{
+
+		padding: 10px;
+		width: 100px;
+		color: white;
+		background-color: lightblue;
+		border: none;
+	}
+
+	#box{
+
+		background-color: grey;
+		margin: auto;
+		width: 300px;
+		padding: 20px;
+	}
+
+	</style>
+
+	<div id="box">
+		
+		<form method="post">
+			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
+
+			<input id="text" type="text" name="user_name"><br><br>
+			<input id="text" type="password" name="password"><br><br>
+
+			<input id="button" type="submit" value="Login"><br><br>
+
+			<p> ben je geen docent? <a href="Apparaten overzicht.php">klik hier</a><br><br> </p>
 		</form>
 	</div>
 </body>
