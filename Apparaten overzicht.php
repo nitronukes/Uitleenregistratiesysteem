@@ -1,6 +1,6 @@
 <?php
 
-
+Include "header.html";
 Include "configure.php";
 $retouneerdatum = $_POST['Retouneer']; 
 $sql = "INSERT INTO `uitleen`(`Docent`, `Naam`, `Inleverdatum`) VALUES (?,?,?)";
