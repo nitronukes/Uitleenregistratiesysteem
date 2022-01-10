@@ -105,6 +105,7 @@ h2{
     height: 80px;
     margin-left: 1%;
     margin-top: 5%;
+    resize: vertical;
    }
 
 

@@ -45,7 +45,7 @@ echo "
         <td>" . $row['Apparaat'] . "</td>
         <td>" . $row['uitleendatum'] . "</td>
         <td>". $row['inleverdatum'] . "</td>
-        <td> <a style='color:green; font-size: 1.2em'; class='fas fa-file-upload knop' href='#myForm?apparaat=" . $row['Apparaat'] . "'></a> </td>
+        <td> <a style='color:green; font-size: 1.2em'; class='fas fa-file-upload knop' href='?apparaat=" . $row['Apparaat'] . "#myForm'></a> </td>
 
      
 
@@ -55,7 +55,7 @@ echo "
  
 
 echo'
-<div class="form-popup" id="myForm?apparaat=' . $row["Apparaat"] . '">
+<div class="form-popup" id="myForm">
   <form action="" method="POST" class="Lever-in">
 
 
@@ -68,8 +68,9 @@ echo'
 
 </body>
 </html>
+
   ';
-  
+
 
 if (isset($_POST['submit'])) {
 
@@ -77,18 +78,20 @@ if (isset($_POST['submit'])) {
   $apparaat= $_GET['apparaat'] ;
 
 
-  $sql = "INSERT INTO `apparaten`(`Apparaatnaam`, `opmerking`) VALUES ('$apparaat', '$opmerking')";
-    
-  $insert = $conn->query($sql);
 
-  if ( $insert ) {
+  $sql = "UPDATE `apparaten` SET `opmerking`='$opmerking',`status`=1 WHERE Apparaatnaam='$apparaat'";
+    
+  $update = $conn->query($sql);
+
+  if ( $update ) {
 
     $sql3 = "DELETE FROM `uitleen` WHERE `Apparaat`='$apparaat'";
     $delete = $conn->query($sql3);
 
-  }
+      if ( $delete ) {
+        header("location:#");
 
-}}}
+  }}}}}
 
 $conn->close();
 ?>
