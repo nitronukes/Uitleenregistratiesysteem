@@ -13,13 +13,8 @@
         <div class="nested">
             <div>Apparaat naam</div>
             <div>Afbeelding</div>
-<<<<<<< HEAD
-            <div>
-                <p>Leen uit</p>
-=======
             <div> 
                 <button class="open-button" onclick="openForm()">Leen uit</button>
->>>>>>> 1209590b537ac8cd2d93949f868307296382b924
                 <p>Beschikbaar</p>
             </div>
         </div>
