@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <head>
 <link rel="stylesheet" href="Uitleenoverzicht.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
 
 </head>
 <body>
@@ -14,6 +16,7 @@ $sql = "SELECT `Naam`, `Docent`, `Apparaat`, `uitleendatum`, `inleverdatum` FROM
 $result = $conn->query($sql);
 //header van de tabel
 echo "
+<h2>Uitleenoverzicht</h2>
 <div class='table-wrapper'>
     <table class='fl-table'>
         <thead>
@@ -23,6 +26,8 @@ echo "
             <th>Apparaat</th>
             <th>Uitleendatum</th>
             <th>Inleverdatum</th>
+            <th>inleveren</th>
+
         </tr>
         </thead>
         <tbody>";
@@ -31,6 +36,8 @@ echo "
  
  if ($result) {
     foreach ($result as $row) {
+    //body van de tabel
+
     echo "
     <tr>
         <td>" . $row['Naam']  . "</td>
@@ -38,12 +45,53 @@ echo "
         <td>" . $row['Apparaat'] . "</td>
         <td>" . $row['uitleendatum'] . "</td>
         <td>". $row['inleverdatum'] . "</td>
-    
-    <tbody>
-  ";
-    }
-}
+        <td> <a style='color:green; font-size: 1.2em'; class='fas fa-file-upload knop' href='?apparaat=" . $row['Apparaat'] . "#myForm'></a> </td>
 
-?>
+     
+
+    <tbody>
+
+  ";
+ 
+
+echo'
+<div class="form-popup" id="myForm">
+  <form action="" method="POST" class="Lever-in">
+
+
+   <textarea class="opmerking" placeholder="Opmerking" name="opmerking" ></textarea> <br> <br> <br>
+
+    <button name="submit" class="leverinknop">Lever in</button>
+    <a type="button" class="sluitknop" href="#">&times;</a>
+  </form>
+</div>
+
 </body>
 </html>
+
+  ';
+
+
+if (isset($_POST['submit'])) {
+
+  $opmerking=$_POST['opmerking'];
+  $apparaat= $_GET['apparaat'] ;
+
+
+
+  $sql = "UPDATE `apparaten` SET `opmerking`='$opmerking',`status`=1 WHERE Apparaatnaam='$apparaat'";
+    
+  $update = $conn->query($sql);
+
+  if ( $update ) {
+
+    $sql3 = "DELETE FROM `uitleen` WHERE `Apparaat`='$apparaat'";
+    $delete = $conn->query($sql3);
+
+      if ( $delete ) {
+        header("location:#");
+
+  }}}}}
+
+$conn->close();
+?>
