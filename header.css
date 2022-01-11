@@ -256,3 +256,66 @@ nav .content .links{
   font-size: 45px;
   margin: 5px 0;
 }
+.sluitknop{
+  margin-right: 1%;
+  margin-bottom: 1%;
+ float: right;
+}
+.sluitknop:hover{
+  opacity: 1;
+  }
+  .sluitknop{
+    background-color: #505050;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  .form-popup {
+    position: fixed;
+    box-shadow: 0px 25px 25px rgb(51, 51, 51);
+    background: #ffffff ;
+    left: 35%;
+    top: 20%;
+    width: 30%;
+    border: 1px;
+    border-style: inset;
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  .form-popup:target {
+    visibility: visible;
+    opacity: 1;
+}
+.naam_categorie{
+
+ }
+ .Maak_aan_knop, .sluitknop{
+  background-color: #505050;
+  color: white;
+  padding: 10px 10px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.Maak_aan_knop:hover, .sluitknop:hover{
+opacity: 1;
+}
+
+.Maak_aan_knop{
+  margin-left: 1%;
+  float: left;
+  margin-bottom: 1%;
+}
+.sluitknop{
+  margin-right: 1%;
+  margin-bottom: 1%;
+  float: right;
+}
+.Nieuw{
+  background:grey;
+  margin: 1% 30%;
+  position: relative;
+  bottom: 17px;
+  
+}
