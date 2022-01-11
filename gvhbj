@@ -1,0 +1,6 @@
+$Datumvandaag = date("Y/m/d");
+$sql = "INSERT INTO `uitleen`(`Docent`, `Naam`, `Uitleendatum`, `Inleverdatum`) VALUES (?,?,?,?)";
+
+if (isset($_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer'], $_POST[$Datumvandaag])) {
+$insert = $conn ->prepare($sql);
+$insert->bind_param('ssss', $_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer'], $_POST[$Datumvandaag]);
