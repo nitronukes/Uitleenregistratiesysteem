@@ -65,7 +65,7 @@ echo'
    <textarea class="opmerking" placeholder="Opmerking" name="opmerking" ></textarea> <br> <br> <br>
 
     <button name="submit" class="leverinknop">Lever in</button>
-    <a type="button" class="sluitknop" href="#">&times;</a>
+    <a type="button" class="sluitknop" href="/Uitleenregistratiesysteem/Uitleenoverzicht.php#">&times;</a>
   </form>
 </div>
 
@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
     $delete = $conn->query($sql3);
 
       if ( $delete ) {
-        header("location:#");
+        header("location:/Uitleenregistratiesysteem/Uitleenoverzicht.php#");
 
   }}}}}
 ?>
