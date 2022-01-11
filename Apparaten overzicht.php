@@ -94,13 +94,13 @@ $categorie=$_POST['nieuwe_categorie'];
 
 
 $retouneerdatum = $_POST['Retouneer']; 
-$sql = "INSERT INTO `uitleen`(`Docent`, `Naam`, `Inleverdatum`) VALUES (?,?,?)";
+$sql = "INSERT INTO `uitleen`(`Docent`, `Naam`,`Uitleendatum`, `Inleverdatum`) VALUES (?,?,CURDATE(),?)";
 
 if (isset($_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer'])) {
 $insert = $conn ->prepare($sql);
 $insert->bind_param('sss', $_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer']);
 
-//steefan
+
 // if (!$_POST['Retouneer']){
   if ($insert->execute())  {
     echo "
@@ -154,12 +154,10 @@ $conn->close();
   <form action="Apparaten overzicht.php" method="POST" class="form-apparaten-overzicht">
     <h1></h1>
 
-
     <input type="text" placeholder="Naam Docent" name="Docent" required>
-
+    
     <input type="text" placeholder="Leerlingnummer" name="Leerlingnmr" required>
-
-    <input type="text" placeholder="Retouneer datum" name="Retouneer" required>
+    <input type="date" name="Retouneer" required>
 
     <button type="submit" class="btn-AO">Leen uit</button>
     <a type="button" class="btn-cancel-AO" href="/Uitleenregistratiesysteem/Apparaten%20overzicht.php#">Sluit</a>
