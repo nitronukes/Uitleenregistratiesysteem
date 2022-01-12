@@ -6,6 +6,7 @@
   <title>header</title>
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
   <div class="wrapper">
@@ -22,8 +23,7 @@
             <label for="showDrop" class="mobile-item">Nieuw</label>
             <ul class="drop-menu">
               <li><a href="#apparaat">apparaat</a></li>
-              <li><a href="#categorie">Categorie</a></li>
-           
+              <li><a href="#categorie">Categorie</a></li>           
             </ul>
             
           </li>
@@ -41,10 +41,33 @@
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Categorie</label>
             <ul class="drop-menu">
-              <li><a href="#">Laptops</a></li>
-              <li><a href="#">Printers</a></li>
-              <li><a href="#">Drones</a></li>
-              <li><a href="#">Camera's</a></li>
+<?php
+
+//connectie maken met de database
+Include "configure.php";
+
+session_start();
+
+//info uit de database halen
+$sql3 = "SELECT `Naam` FROM categorieen";
+$result2 = $conn->query($sql3);
+//header van de tabel
+foreach ($result2 as $row2) {
+echo "
+    <li><a>" . $row2['Naam']  . " <button name='klik'><i class='far fa-edit'></i></button></a></li>
+
+
+<tbody>
+
+";
+if (isset($_POST['klik'])) {
+  header('location:#');
+
+    }}
+  ?>
+
+
+             
             </ul>
             
           </li>
@@ -60,60 +83,12 @@
   </div>
   
   
-  <!-- de popup voor als je op nieuwe categorie klikt -->
-    <div class="form-popup" id="categorie">
-      <form action="" method="POST" class="Lever-in">
-     <center>   <p class="Nieuw"> Nieuwe Categorie </p> <br>
-    
-    
-      <input type="text" class="naam_categorie" placeholder="naam" name="nieuwe_categorie" required > <br> <br> <br><br> <br> <br>
-      </center>
-
-        <button name="submitten" class="Maak_aan_knop">Maak aan</button>
-        <a type="button" class="sluitknop" href="#">&times;</a>
-      </form>
-    </div>
-
 <?php
+//verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
+include "nieuwe_categorie_popup.php";
+
+
 Include "configure.php";
-
-//als er in de popup van nieuwe categorie geklikt wordt dan word het onderstaande uitgevoert en wordt de ingevulde naam in de table van categorieen gezet
-if (isset($_POST['submitten'])) {
-$categorie=$_POST['nieuwe_categorie'];
-
-  $sql2 = "INSERT INTO `categorieen`(`Naam`) VALUES ('$categorie')";
-  $insert2 = $conn->query($sql2);
-
-  if ( $insert2 ) {
-
-    header("location:#");
-
-
-}}
-
-
-
-$retouneerdatum = $_POST['Retouneer']; 
-$sql = "INSERT INTO `uitleen`(`Docent`, `Naam`,`Uitleendatum`, `Inleverdatum`) VALUES (?,?,CURDATE(),?)";
-
-if (isset($_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer'])) {
-$insert = $conn ->prepare($sql);
-$insert->bind_param('sss', $_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer']);
-
-
-// if (!$_POST['Retouneer']){
-  if ($insert->execute())  {
-    echo "
-      <center>
-      <body style='font-size:x-large;'>
-      Apparaat is uit geleent.
-        <br>
-        <strong>Retouneer datum: $retouneerdatum </strong>
-          <br>
-        </div>
-      </center>";
-}
-}
 
 echo "<div class='apparatencontainer'>";
 
@@ -151,7 +126,7 @@ $conn->close();
 <body>
     
 <div class="form-popup" id="myForm">
-  <form action="Apparaten overzicht.php" method="POST" class="form-apparaten-overzicht">
+  <form action="" method="POST" class="form-apparaten-overzicht">
     <h1></h1>
 
     <input type="text" placeholder="Naam Docent" name="Docent" required>
@@ -159,7 +134,7 @@ $conn->close();
     <input type="text" placeholder="Leerlingnummer" name="Leerlingnmr" required>
     <input type="date" name="Retouneer" required>
 
-    <button type="submit" class="btn-AO">Leen uit</button>
+    <button name="submittie" class="btn-AO">Leen uit</button>
     <a type="button" class="btn-cancel-AO" href="/Uitleenregistratiesysteem/Apparaten%20overzicht.php#">Sluit</a>
   </form>
 </div>
@@ -168,3 +143,28 @@ $conn->close();
 
 </body>
 </html>
+
+<?php
+Include "configure.php";
+if (isset($_POST['submittie'])) {
+
+
+  $apparaat= $_GET['apparaat'];
+  $retouneerdatum = $_POST['Retouneer']; 
+  $docent = $_POST['Docent']; 
+  $leerlingnmr = $_POST['Leerlingnmr']; 
+  $datum=date('d-m-Y');
+
+  
+  
+
+  $sql = "INSERT INTO `uitleen`(`Docent`, `Naam`, `Apparaat`,`Uitleendatum`, `Inleverdatum`) VALUES ('$docent', '$leerlingnmr', '$apparaat', '$datum', '$retouneerdatum' )";
+
+ $insert = $conn->query($sql);
+
+
+// if (!$_POST['Retouneer']){
+  if ($insert)  {
+ header('location:#');
+}}
+?>
