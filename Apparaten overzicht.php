@@ -82,12 +82,12 @@ echo "
     </nav>
   </div>
 <?php
-include "categorie_bewerken_popup.php";
+
+
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";
 
 
-Include "configure.php";
 
 echo "<div class='apparatencontainer'>";
 
@@ -108,7 +108,7 @@ echo "<div class='apparatencontainer'>";
       }}
     echo "</div>";
       
-$conn->close();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -144,7 +144,6 @@ $conn->close();
 </html>
 
 <?php
-Include "configure.php";
 if (isset($_POST['submittie'])) {
 
 
@@ -169,6 +168,6 @@ if (isset($_POST['submittie'])) {
     $update = $conn->query($sql4);
 
     if ($update)  {
-      header("location:/Uitleenregistratiesysteem/Apparaten overzicht.php#");
+      header("location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
     }}}
 ?>
