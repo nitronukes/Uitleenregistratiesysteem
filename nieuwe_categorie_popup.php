@@ -1,5 +1,5 @@
  <!-- de (frontend) popup voor als je op nieuwe categorie klikt -->
-  <div class="form-popup" id="categorie">
+  <div class="Cat-popup" id="categorie">
       <form action="" method="POST" class="Lever-in">
      <center>   <p class="Nieuw"> Nieuwe Categorie </p> <br>
     
@@ -26,7 +26,7 @@ $categorie=$_POST['nieuwe_categorie'];
 
   if ( $insert2 ) {
 
-    header("location:#");
+    header("location:/Uitleenregistratiesysteem/Apparaten overzicht.php#");
 
 
 }}

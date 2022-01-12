@@ -54,16 +54,16 @@ $result2 = $conn->query($sql3);
 //header van de tabel
 foreach ($result2 as $row2) {
 echo "
-    <li><a>" . $row2['Naam']  . " <button name='klik'><i class='far fa-edit'></i></button></a></li>
+<li><p>" . $row2['Naam']  . " <button><a class='far fa-edit' style='background:#171c24;' href='?categorie=" . $row2['Naam'] . "#categorieNIEUW'></a></button></p></li>
+
 
 
 <tbody>
 
 ";
-if (isset($_POST['klik'])) {
-  header('location:#');
 
-    }}
+
+    }
   ?>
 
 
@@ -81,9 +81,8 @@ if (isset($_POST['klik'])) {
       </form>
     </nav>
   </div>
-  
-  
 <?php
+include "categorie_bewerken_popup.php";
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";
 
@@ -170,6 +169,6 @@ if (isset($_POST['submittie'])) {
     $update = $conn->query($sql4);
 
     if ($update)  {
-    header('location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#');
-}}}
+      header("location:/Uitleenregistratiesysteem/Apparaten overzicht.php#");
+    }}}
 ?>
