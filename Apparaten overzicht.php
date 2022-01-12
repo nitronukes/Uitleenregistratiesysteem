@@ -1,4 +1,4 @@
-<html lang="en">
+<!-- <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +60,7 @@
   </div>
   
   
-  <!-- de popup voor als je op nieuwe categorie klikt -->
+  <!-- de popup voor als je op nieuwe categorie klikt --
     <div class="form-popup" id="categorie">
       <form action="" method="POST" class="Lever-in">
      <center>   <p class="Nieuw"> Nieuwe Categorie </p> <br>
@@ -72,7 +72,7 @@
         <button name="submitten" class="Maak_aan_knop">Maak aan</button>
         <a type="button" class="sluitknop" href="#">&times;</a>
       </form>
-    </div>
+    </div> -->
 
 <?php
 Include "configure.php";
@@ -92,13 +92,16 @@ $categorie=$_POST['nieuwe_categorie'];
 }}
 
 
-
+$Apparaatje = $_GET['Apparaatnaam'];
 $retouneerdatum = $_POST['Retouneer']; 
-$sql = "INSERT INTO `uitleen`(`Docent`, `Naam`,`Uitleendatum`, `Inleverdatum`) VALUES (?,?,CURDATE(),?)";
+$sql = "INSERT INTO `uitleen`(`Docent`, `Naam`, `Apparaat`, `Uitleendatum`, `Inleverdatum`) VALUES (?,?,?,CURDATE(),?)";
+$_POST['Apparaat'] ?? $Apparaatje;
+echo $Apparaatje, $retouneerdatum;
 
-if (isset($_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer'])) {
+
+if (isset($_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Apparaat'], $_POST['Retouneer'])) {
 $insert = $conn ->prepare($sql);
-$insert->bind_param('sss', $_POST['Docent'], $_POST['Leerlingnmr'], $_POST['Retouneer']);
+$insert->bind_param('ssss', $_POST['Docent'], $_POST['Apparaat'], $_POST['Leerlingnmr'], $_POST['Retouneer']);
 
 
 // if (!$_POST['Retouneer']){
