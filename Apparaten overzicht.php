@@ -1,4 +1,4 @@
-<!-- <html lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -163,8 +163,13 @@ if (isset($_POST['submittie'])) {
  $insert = $conn->query($sql);
 
 
-// if (!$_POST['Retouneer']){
   if ($insert)  {
- header('location:#');
-}}
+
+    $sql4 = "UPDATE `apparaten` SET `status`=0 WHERE Apparaatnaam='$apparaat'";
+    
+    $update = $conn->query($sql4);
+
+    if ($update)  {
+    header('location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#');
+}}}
 ?>
