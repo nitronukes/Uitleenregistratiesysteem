@@ -42,6 +42,7 @@
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Categorie</label>
             <ul class="drop-menu">
+              
 <?php
 
 //connectie maken met de database
