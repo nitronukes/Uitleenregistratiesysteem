@@ -31,7 +31,7 @@
              
             </ul>
             
-            <li><a href="login.php">Log uit</a></li>   
+            <li><a href="login.php">Loguit</a></li>   
           <li><a href="#">Uitleenoverzicht</a></li>
           <li><a href="Apparaten overzicht.php">Apperatuuroverzicht</a></li>
        

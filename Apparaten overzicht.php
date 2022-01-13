@@ -17,9 +17,9 @@
       <div class="content">
       <div class="logo"><a href="#">Rocfriesepoort</a></div>
         <ul class="links">
-        <li><a href="login.php">Log uit</a></li>
+        <li><a href="login.php">Loguit</a></li>
         <li><a href="Uitleenoverzicht.php">Uitleenoverzicht</a></li>
-          <li style='padding-right:120px'><a href="#">Apperatuuroverzicht</a></li>
+          <li><a href="#">Apperatuuroverzicht</a></li>
           <li>
             <a href="#" class="desktop-item">Nieuw</a>
             <input type="checkbox" id="showDrop">
