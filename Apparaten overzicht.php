@@ -99,16 +99,15 @@ echo "<br><br><br><div class='apparatencontainer'>";
       <div class='nested'>
             <div>" . $row['Categorie'] . "</div>
             <div>" . $row['Apparaatnaam'] . "</div>
-            <div>Afbeelding</div>
+            <div><img class='Image' src=img/" . $row['Afbeelding'] . "></div>
             <div> 
                 <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>
                 <p>Beschikbaar</p>
             </div>
       </div>";
       }}
-    echo "</div>";
-      
-
+    echo "</div>";      
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,7 +122,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
 
 </head>
 <body>
-    
+
 <div class="form-popup" id="myForm">
   <form action="" method="POST" class="form-apparaten-overzicht">
     <h1></h1>
