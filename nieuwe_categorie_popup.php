@@ -49,7 +49,7 @@ echo "
       </form>
     </div>
 
- <!-- de (frontend) popup voor als je op nieuwe categorie klikt -->
+ <!-- de (frontend) popup voor als je op bewerk categorie klikt -->
  <div class="Cat-popup" id="categorieNIEUW">
       <form action="" method="POST" class="Lever-in">
      <center>   <p class="Nieuw"> Categorie bewerken </p> <br>
@@ -65,6 +65,11 @@ echo "
     </div>
 
 <?php
+
+if (isset($_POST['submitten'])) {
+  
+}
+
 
 //als er in de popup van nieuwe categorie geklikt wordt dan word het onderstaande uitgevoert en wordt de ingevulde naam in de table van categorieen gezet
 //(backend van de popup nieuwe categorie toevoegen)
