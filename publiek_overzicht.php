@@ -38,7 +38,7 @@
 
 //connectie maken met de database
 Include "configure.php";
-
+Include "login.css";
 session_start();
 
 //info uit de database halen
