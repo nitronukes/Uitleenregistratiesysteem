@@ -17,9 +17,9 @@
       <div class="content">
       <div class="logo"><a href="#">Rocfriesepoort</a></div>
         <ul class="links">
-        <li><a href="login.php">Log uit</a></li>
+        <li><a href="login.php">Loguit</a></li>
         <li><a href="Uitleenoverzicht.php">Uitleenoverzicht</a></li>
-          <li style='padding-right:120px'><a href="#">Apperatuuroverzicht</a></li>
+          <li><a href="#">Apperatuuroverzicht</a></li>
           <li>
             <a href="#" class="desktop-item">Nieuw</a>
             <input type="checkbox" id="showDrop">
@@ -105,7 +105,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
       <div class='nested'>
             <div>" . $row['Categorie'] . "</div>
             <div>" . $row['Apparaatnaam'] . "</div>
-            <div><img class='Image' src=img/" . $row['Afbeelding'] . "></div>
+            <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> 
                 <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>
                 <p>Beschikbaar</p>
