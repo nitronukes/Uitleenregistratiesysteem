@@ -21,8 +21,11 @@
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Nieuw</label>
             <ul class="drop-menu">
+              
               <li><a href="#apparaat">apparaat</a></li>
               <li><a href="#categorie">Categorie</a></li>
+              
+              
            
             </ul>
             
@@ -48,8 +51,9 @@
             </ul>
             
           </li>
-          
+          <li><a href="Uitleenoverzicht.php">Overzicht</a></li>
         </ul>
+        
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form action="#" class="search-box">

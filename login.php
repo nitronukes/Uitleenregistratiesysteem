@@ -35,7 +35,7 @@ session_start();
 					}
 				}
 			}
-			
+			//bij verkeerd wachtwoord of username krijg je een melding
 			echo "wrong username or password!";
 		}else
 		{
@@ -53,7 +53,7 @@ session_start();
 	<link rel="stylesheet" href="login.css">
 </head>
 <body>
-
+    
 	<style type="text/css">
 	
 	#text{

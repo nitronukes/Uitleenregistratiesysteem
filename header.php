@@ -18,7 +18,7 @@
       <div class="content">
       <div class="logo"><a href="#">Rocfriesepoort</a></div>
         <ul class="links">
-          
+        <li><a href="Uitleenoverzicht.php">Overzicht</a></li>
           <li>
             <a href="#" class="desktop-item">Sorteer</a>
             <input type="checkbox" id="showDrop">
