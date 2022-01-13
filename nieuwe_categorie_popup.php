@@ -10,7 +10,7 @@
             <option value = "Java">Telefoon</option>
             <option value = "Discrete Mathematics">Printer</option>
          </select>  <br> <br>  
-      <input type="text" class="naam_categorie" placeholder="foto" name="nieuwe_categorie" required > <br> <br> <br> <br>
+      <input type="file" class="naam_categorie" placeholder="foto" name="nieuwe_categorie" required > <br> <br> <br> <br>
       
       </center>
 
