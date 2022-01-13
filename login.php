@@ -17,7 +17,7 @@ session_start();
 
 			//lezen van database
 			$query = "select * from users where user_name = '$user_name' limit 1";
-			$result = mysqli_query($con, $query);
+			$result = mysqli_query($conn, $query);
 
 			if($result)
 			{
@@ -96,7 +96,7 @@ session_start();
 
 			<input id="button" type="submit" value="Login"><br><br>
 
-			<p class="login-tekst"> ben je geen docent? <a class="geen-docent" href="Apparatuur overzicht.php">klik hier</a><br><br> </p>
+			<p class="login-tekst"> ben je geen docent? <a class="geen-docent" href="publiek_overzicht.php">klik hier</a><br><br> </p>
 		</form>
 	</div>
 </body>
