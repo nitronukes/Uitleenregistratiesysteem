@@ -3,7 +3,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>header</title>
+  <title>Apparatuuroverzicht</title>
+  <link rel="stylesheet" href="login.css">
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -59,30 +60,15 @@ $result2 = $conn->query($sql3);
 //header van de tabel
 foreach ($result2 as $row2) {
 echo "
-<li><p>" . $row2['Naam']  . " <button><a class='far fa-edit' style='background:#171c24;' href='?categorie=" . $row2['Naam'] . "#categorieNIEUW'></a></button></p></li>
-
-
-
-<tbody>
-
-";
-
-
-    }
+<li><p>" . $row2['Naam']  . " <button><a class='far fa-edit' style='background:#171c24;' href='?categorie=" . $row2['Naam'] . "#categorieNIEUW'></a></button></p></li>";
+}
   ?>
-
-
-             
             </ul>
-            
-          
-         
         </ul>
-        
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form action="#" class="search-box">
-        <input type="text" placeholder="Type Something to Search..." required>
+        <input type="text" placeholder="Typ iets om te zoeken..." required>
         <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
@@ -94,11 +80,10 @@ echo "
 include "nieuwe_categorie_popup.php";
 
 
-
 echo "<br><br><br><div class='apparatencontainer'>";
 
     $sql = "SELECT * FROM apparaten";
-    if ($result = $conn->query($sql)) {
+    $result = $conn->query($sql);
       foreach ($result as $row) {
       echo "
       
@@ -114,46 +99,28 @@ echo "<br><br><br><div class='apparatencontainer'>";
               }else{
                 echo"<p>Beschikbaar</p> </div>
                 </div>";
-        }}}
+        }}
       echo "</div>";     
     
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apparaten overzicht</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
-
-</head>
-<body>
 
 <div class="form-popup" id="myForm">
   <form action="" method="POST" class="form-apparaten-overzicht">
-    <h1></h1>
 
     <input type="text" placeholder="Naam Docent" name="Docent" required>
     
     <input type="text" placeholder="Leerlingnummer" name="Leerlingnmr" required>
     <input type="date" name="Retouneer" required>
 
-    <button name="submittie" class="btn-AO">Leen uit</button>
+    <button name="submit" class="btn-AO">Leen uit</button>
     <a type="button" class="btn-cancel-AO" href="/Uitleenregistratiesysteem/Apparaten%20overzicht.php#">Sluit</a>
   </form>
 </div>
-
-
-
 </body>
 </html>
-
 <?php
-if (isset($_POST['submittie'])) {
-  if($row['status'] == 1){
+if (isset($_POST['submit'])) {
+  
 
   $apparaat= $_GET['apparaat'];
   $retouneerdatum = $_POST['Retouneer']; 
@@ -165,23 +132,17 @@ if (isset($_POST['submittie'])) {
   
 
   $sql = "INSERT INTO `uitleen`(`Docent`, `Naam`, `Apparaat`,`Uitleendatum`, `Inleverdatum`) VALUES ('$docent', '$leerlingnmr', '$apparaat', '$datum', '$retouneerdatum' )";
-
- $insert = $conn->query($sql);
+  $insert = $conn->query($sql);
 
 
  
   if ($insert)  {
 
     $sql4 = "UPDATE `apparaten` SET `status`=0 WHERE Apparaatnaam='$apparaat'";
-    
     $update = $conn->query($sql4);
 
     if ($update)  {
       header("location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
   
-    }}}else{
-    echo '<script language="javascript">';
-    echo 'alert("apparaat al uitgeleend. Uitlenen niet mogelijk")';
-    echo '</script>';
-  }}
+    }}}
 ?>
