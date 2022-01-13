@@ -17,20 +17,8 @@
       <div class="content">
       <div class="logo"><a href="#">Rocfriesepoort</a></div>
         <ul class="links">
-        <li><a href="login.php">Loguit</a></li>
-        <li><a href="Uitleenoverzicht.php">Uitleenoverzicht</a></li>
-          <li><a href="#">Apperatuuroverzicht</a></li>
-          <li>
-            <a href="#" class="desktop-item">Nieuw</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Nieuw</label>
-            <ul class="drop-menu">
-              
-              <li><a href="#apparaat">apparaat</a></li>
-              <li><a href="#categorie">Categorie</a></li>           
-            </ul>
-            
-          </li>
+        <li><a href="login.php">Login</a></li>
+       
           <li>
             <a href="#" class="desktop-item">Sorteer</a>
             <input type="checkbox" id="showDrop">
@@ -106,16 +94,15 @@ echo "<br><br><br><div class='apparatencontainer'>";
             <div>" . $row['Categorie'] . "</div>
             <div>" . $row['Apparaatnaam'] . "</div>
             <div><img class='Image' src=img/" . $row['Afbeelding'] . "></div>
-            <div> 
-                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>;";
-                if($row['status'] == 0){
-                  echo"<p>Uitgeleend</p> </div>
-                  </div>";
-              }else{
-                echo"<p>Beschikbaar</p> </div>
+            <div> <br>";
+            if($row['status'] == 0){
+                echo"<p>Uitgeleend</p> </div>
                 </div>";
-        }}}
-      echo "</div>";     
+            }else{
+              echo"<p>Beschikbaar</p> </div>
+              </div>";
+      }}}
+    echo "</div>";      
     
 ?>
 <!DOCTYPE html>
@@ -153,7 +140,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
 
 <?php
 if (isset($_POST['submittie'])) {
-  if($row['status'] == 1){
+
 
   $apparaat= $_GET['apparaat'];
   $retouneerdatum = $_POST['Retouneer']; 
@@ -169,7 +156,6 @@ if (isset($_POST['submittie'])) {
  $insert = $conn->query($sql);
 
 
- 
   if ($insert)  {
 
     $sql4 = "UPDATE `apparaten` SET `status`=0 WHERE Apparaatnaam='$apparaat'";
@@ -178,10 +164,5 @@ if (isset($_POST['submittie'])) {
 
     if ($update)  {
       header("location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
-  
-    }}}else{
-    echo '<script language="javascript">';
-    echo 'alert("apparaat al uitgeleend. Uitlenen niet mogelijk")';
-    echo '</script>';
-  }}
+    }}}
 ?>
