@@ -92,7 +92,7 @@ include "nieuwe_categorie_popup.php";
 
 
 
-echo "<div class='apparatencontainer'>";
+echo "<br><br><br><div class='apparatencontainer'>";
 
     $sql = "SELECT * FROM apparaten";
     if ($result = $conn->query($sql)) {
@@ -134,7 +134,27 @@ echo "<div class='apparatencontainer'>";
     <input type="text" placeholder="Naam Docent" name="Docent" required>
     
     <input type="text" placeholder="Leerlingnummer" name="Leerlingnmr" required>
-    <input type="date" name="Retouneer" required>
+    <input type="date" id= "Retouneer" name="Retouneer" required>
+    <script>
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1;
+      var yyyy = today.getFullYear();
+      
+
+      if (dd < 10) {
+        dd = '0' + dd;
+      }
+
+      if (mm < 10) {
+        mm = '0' + mm;
+      } 
+          
+      todaymin = yyyy + '-' + mm + '-' + dd;
+      document.getElementById("Retouneer").setAttribute("min", todaymin);
+      todaymax = yyyy + '-' + mm + '-' + (dd + 7);
+      document.getElementById("Retouneer").setAttribute("max", todaymax);
+    </script>
 
     <button name="submittie" class="btn-AO">Leen uit</button>
     <a type="button" class="btn-cancel-AO" href="/Uitleenregistratiesysteem/Apparaten%20overzicht.php#">Sluit</a>

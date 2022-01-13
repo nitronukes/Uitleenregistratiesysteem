@@ -275,7 +275,7 @@ nav .content .links{
     cursor: pointer;
     opacity: 0.8;
   }
-  .Cat-popup , .form-popup {
+  .Cat-popup {
     position: fixed;
     box-shadow: 0px 25px 25px rgb(51, 51, 51);
     background: #ffffff ;
@@ -288,13 +288,12 @@ nav .content .links{
     visibility: hidden;
     opacity: 0;
   }
-  .Cat-popup:target, .form-popup:target {
+  .Cat-popup:target {
     visibility: visible;
     opacity: 1;
 }
-.naam_categorie{
 
- }
+
  .Maak_aan_knop, .sluitknop{
   background-color: #505050;
   color: white;
@@ -322,4 +321,19 @@ opacity: 1;
   position: relative;
   bottom: 17px;
   
+}
+
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 4px 7px;
+  cursor: pointer;
+}
+.custom-file-upload:hover{
+  background: #505050;
+  opacity: 0.8;
+  color: white;
 }

@@ -5,12 +5,28 @@
     
     
       <input type="text" class="naam_categorie" placeholder="naam" name="nieuwe_categorie" required >
-      <select name = "dropdown">
-            <option value = "Computer Architecture" selected>Laptop</option>
-            <option value = "Java">Telefoon</option>
-            <option value = "Discrete Mathematics">Printer</option>
-         </select>  <br> <br>  
-      <input type="text" class="naam_categorie" placeholder="foto" name="nieuwe_categorie" required > <br> <br> <br> <br>
+      <select name="dropdown">
+            <option disabled hidden selected value = "categorie">categorie</option>
+<?php
+$sql6 = "SELECT `Naam` FROM categorieen";
+$result3 = $conn->query($sql6);
+
+foreach ($result3 as $row4) {
+echo "
+<option value='" . $row4['Naam']  . "'>" . $row4['Naam']  . "</option>
+
+
+
+<tbody>
+
+";}
+?>
+
+         </select>  <br> <br> <br> 
+         <label for="file-upload" class="custom-file-upload">
+    <i class="fas fa-cloud-upload-alt"></i> foto
+         </label>
+         <input id="file-upload" name='fototje' type="file"/>  <br> <br> <br>
       
       </center>
 
@@ -60,7 +76,7 @@ $categorie=$_POST['nieuwe_categorie'];
 
   if ( $insert2 ) {
 
-  header("/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
+    header("Location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
 
 }}
 

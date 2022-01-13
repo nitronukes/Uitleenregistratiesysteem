@@ -7,3 +7,356 @@
 .geen-docent{
   color:white;
 }
+
+.container .login-social {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  margin-bottom: 25px;
+}
+
+.container .login-social a {
+  padding: 12px;
+  margin: 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0,0,0,.3);
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  color: #FFF;
+  transition: .3s;
+}
+
+.container .login-social a i {
+  margin-right: 5px;
+}
+
+.container .login-social a.facebook {
+  background: #4267B2;
+}
+
+.container .login-social a.twitter {
+  background: #1DA1F2;
+}
+
+.container .login-social a.google-plus {
+  background: #db4a39;
+}
+
+.container .login-social a.linkedin {
+  background: #0e76a8;
+}
+
+.container .login-social a.facebook:hover {
+  background: #3d5fa3;
+}
+
+.container .login-social a.twitter:hover {
+  background: #1991db;
+}
+
+.container .login-social a.google-plus:hover {
+  background: #ca4334;
+}
+
+.container .login-social a.linkedin:hover {
+  background: #0b5c81;
+}
+
+ .input-group {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+ .input-group input {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #e7e7e7;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 30px;
+  background: transparent;
+  outline: none;
+  transition: .3s;
+}
+
+.container .login-email .input-group input:focus, .container .login-email .input-group input:valid {
+  border-color: #a29bfe;
+}
+
+ .btn {
+  display: block;
+  width: 100%;
+  padding: 15px 20px;
+  text-align: center;
+  border: none;
+  background: #000000;
+  outline: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  color: #FFF;
+  cursor: pointer;
+  transition: .3s;
+}
+
+ .btn:hover {
+  
+ background:  #575757;
+}
+
+.particulieren-text{
+  color:rgb(132, 0, 255)
+}
+
+.login-text{
+  color: black;
+  font-weight:600;
+}
+
+.login-register-text a {
+  text-decoration: none;
+  color: #000000;
+}
+
+@media (max-width: 430px) {
+  .container {
+      width: 300px;
+  }
+  .container .login-social {
+      display: block;
+  }
+  .container .login-social a {
+      display: block;
+  }
+}
+  
+  .container .login-social a.facebook:hover {
+    background: #3d5fa3;
+  }
+  
+  .container .login-social a.twitter:hover {
+    background: #1991db;
+  }
+  
+  .container .login-social a.google-plus:hover {
+    background: #ca4334;
+  }
+  
+  .container .login-social a.linkedin:hover {
+    background: #0b5c81;
+  }
+  
+   .input-group {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+  }
+  
+   .input-group input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e7e7e7;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+  }
+  
+  .container .login-email .input-group input:focus, .container .login-email .input-group input:valid {
+    border-color: #a29bfe;
+  }
+  
+   .btn {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #000000;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+  }
+  
+   .btn:hover {
+    
+   background:  #575757;
+  }
+  
+  .particulieren-text{
+    color:rgb(132, 0, 255)
+  }
+  
+  .login-text{
+    color: black;
+    font-weight:600;
+  }
+  
+  .login-register-text a {
+    text-decoration: none;
+    color: #000000;
+  }
+  
+  @media (max-width: 430px) {
+    .container {
+        width: 300px;
+    }
+    .container .login-social {
+        display: block;
+    }
+    .container .login-social a {
+        display: block;
+    }
+  }
+  
+  
+  /*Begin apparaten overzicht docent-------------------------------------------------- */
+  /* De grid/lay out van apparaten overzicht*/
+  .apparatencontainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". . ."
+      ". . .";
+      text-align: center;
+      margin: 10px;
+      font-family: 'Montserrat', sans-serif;
+
+      
+  }/* De grid/lay out van de apparaten in apparatenoverzicht*/
+  .nested {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 10fr 2fr;
+    grid-auto-columns: 1fr 1fr 1fr;
+    gap: 0px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "."
+      "."
+      ".";
+      border: 5px solid black;
+      border-radius: 10px;
+    
+
+    }/* Alle div in een div die de class nested heeft komt dit*/   
+  .nested>div {
+
+border-top: 2.5px solid black;
+border-bottom: 2.5px solid black;
+background-color: #215da1;
+
+  @media(max-width:570px){
+
+  }
+  }
+/* responsiveheid van het grid*/
+  @media screen and (min-width: 745px) {
+    .apparatencontainer {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-auto-columns: 1fr 1fr 1fr;
+      gap: 20px 20px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        ". . ."
+        ". . .";
+        text-align: center;
+        margin: 10px;
+        
+    }
+  }
+
+  /* Knop om pop-up te openen */
+.open-button {
+  background-color: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+  border-radius: 5px ;
+}
+
+
+/* Style van het formulier */
+.form-apparaten-overzicht {
+  width: 100%  ;
+  padding: 10px;
+
+  background-color: white;
+  height: 100%;
+}
+
+/* Style van input troep */
+.form-apparaten-overzicht input[type=text]{
+  width: 100%;
+  padding: 5%;
+  margin: 0% 0 5% 0;
+  border: none;
+  background: #c0c0c0;
+}
+
+
+/* Style van de leen uit button */
+.btn-AO {
+  background-color: #505050;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:25px;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* Style van de Sluit button */
+.btn-cancel-AO {
+    background-color: rgb(75, 75, 75);
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  
+}
+
+/* Hover bij de buttons */
+.btn-cancel-AO:hover, .btn-AO:hover {
+  opacity: 1;
+}
+
+.form-popup {
+  position: fixed;
+    box-shadow: 0px 25px 25px rgb(51, 51, 51);
+    background: #ffffff ;
+    left: 35%;
+    top: 20%;
+    width: 30%;
+    border: 1px;
+    border-style: inset;
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    height: 50%;
+}
+
+.form-popup:target {
+  visibility: visible;
+  opacity: 1;
+}
+input[type="date"]{
+  background-color: #505050;
+  width: 100%;
+  text-align: center;
+}
