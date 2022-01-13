@@ -375,3 +375,8 @@ background-color: #215da1;
   visibility: visible;
   opacity: 1;
 }
+input[type="date"]{
+  background-color: #505050;
+  width: 100%;
+  text-align: center;
+}
