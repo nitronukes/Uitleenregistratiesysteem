@@ -292,9 +292,8 @@ nav .content .links{
     visibility: visible;
     opacity: 1;
 }
-.naam_categorie{
 
- }
+
  .Maak_aan_knop, .sluitknop{
   background-color: #505050;
   color: white;
@@ -322,4 +321,19 @@ opacity: 1;
   position: relative;
   bottom: 17px;
   
+}
+
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 4px 7px;
+  cursor: pointer;
+}
+.custom-file-upload:hover{
+  background: #505050;
+  opacity: 0.8;
+  color: white;
 }

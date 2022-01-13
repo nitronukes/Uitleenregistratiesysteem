@@ -30,12 +30,12 @@ session_start();
 					{
 
 						$_SESSION['user_id'] = $user_data['user_id'];
-						header("Location: indexx.php");
+						header("Location: Apparaten overzicht.php");
 						die;
 					}
 				}
 			}
-			
+			//bij verkeerd wachtwoord of username krijg je een melding
 			echo "wrong username or password!";
 		}else
 		{
@@ -50,9 +50,10 @@ session_start();
 <html>
 <head>
 	<title>Login</title>
+	<link rel="stylesheet" href="login.css">
 </head>
 <body>
-
+    
 	<style type="text/css">
 	
 	#text{
@@ -69,18 +70,18 @@ session_start();
 		padding: 10px;
 		width: 100px;
 		color: white;
-		background-color: lightblue;
+		background-color: red;
 		border: none;
 	}
 
 	#box{
 
-		background-color: grey;
+		background-color: black;
 		margin: auto;
 		width: 300px;
 		padding: 20px;
 	}
-
+	
 	</style>
 
 	<div id="box">
@@ -88,12 +89,12 @@ session_start();
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
 
-			<input id="text" type="text" name="user_name"><br><br>
+			<input placeolder="username" id="text" type="text" name="user_name"><br><br>
 			<input id="text" type="password" name="password"><br><br>
 
 			<input id="button" type="submit" value="Login"><br><br>
 
-			<p> ben je geen docent? <a href="Apparaten overzicht.php">klik hier</a><br><br> </p>
+			<p class="login-tekst"> ben je geen docent? <a class="geen-docent" href="Apparatuur overzicht.php">klik hier</a><br><br> </p>
 		</form>
 	</div>
 </body>

@@ -17,11 +17,15 @@
       <div class="content">
       <div class="logo"><a href="#">Rocfriesepoort</a></div>
         <ul class="links">
+        <li><a href="login.php">Log uit</a></li>
+        <li><a href="Uitleenoverzicht.php">Uitleenoverzicht</a></li>
+          <li style='padding-right:120px'><a href="#">Apperatuuroverzicht</a></li>
           <li>
             <a href="#" class="desktop-item">Nieuw</a>
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Nieuw</label>
             <ul class="drop-menu">
+              
               <li><a href="#apparaat">apparaat</a></li>
               <li><a href="#categorie">Categorie</a></li>           
             </ul>
@@ -41,6 +45,7 @@
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Categorie</label>
             <ul class="drop-menu">
+              
 <?php
 
 //connectie maken met de database
@@ -70,9 +75,10 @@ echo "
              
             </ul>
             
-          </li>
           
+         
         </ul>
+        
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form action="#" class="search-box">
@@ -130,27 +136,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
     <input type="text" placeholder="Naam Docent" name="Docent" required>
     
     <input type="text" placeholder="Leerlingnummer" name="Leerlingnmr" required>
-    <input type="date" id= "Retouneer" name="Retouneer" required>
-    <script>
-      var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth() + 1;
-      var yyyy = today.getFullYear();
-      
-
-      if (dd < 10) {
-        dd = '0' + dd;
-      }
-
-      if (mm < 10) {
-        mm = '0' + mm;
-      } 
-          
-      todaymin = yyyy + '-' + mm + '-' + dd;
-      document.getElementById("Retouneer").setAttribute("min", todaymin);
-      todaymax = yyyy + '-' + mm + '-' + (dd + 7);
-      document.getElementById("Retouneer").setAttribute("max", todaymax);
-    </script>
+    <input type="date" name="Retouneer" required>
 
     <button name="submittie" class="btn-AO">Leen uit</button>
     <a type="button" class="btn-cancel-AO" href="/Uitleenregistratiesysteem/Apparaten%20overzicht.php#">Sluit</a>
