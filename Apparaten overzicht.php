@@ -89,7 +89,7 @@ include "nieuwe_categorie_popup.php";
 
 
 
-echo "<div class='apparatencontainer'>";
+echo "<br><br><br><div class='apparatencontainer'>";
 
     $sql = "SELECT * FROM apparaten";
     if ($result = $conn->query($sql)) {
