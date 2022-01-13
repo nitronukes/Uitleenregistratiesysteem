@@ -7,9 +7,7 @@
 </head>
 <body>
     <?php
-
-include 'header.html';
-
+    
 //connectie maken met de database 
 include 'configure.php';
 
