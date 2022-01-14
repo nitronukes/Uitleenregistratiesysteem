@@ -97,16 +97,17 @@ if (isset($_POST['Zoekbarenter'])) {
       echo "
       
       <div class='nested'>
-            <div>" . $row['Categorie'] . "</div>
-            <div>" . $row['Apparaatnaam'] . "</div>
+      
+            <div>catagorie: " . $row['Categorie'] . "</div>
+            <div>telefoon: " . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> 
                 <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>";
                 if($row['status'] == 0){
-                  echo"<p>Uitgeleend</p> </div>
+                  echo"<p style='color:Red;'>Uitgeleend</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                   </div>";
               }else{
-                echo"<p>Beschikbaar</p> </div>
+                echo"<p style='color:Green;'>Beschikbaar</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                 </div>";
         }}}
        
