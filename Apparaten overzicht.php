@@ -99,13 +99,14 @@ if (isset($_POST['Zoek'])) {
             <div>catagorie: " . $row['Categorie'] . "</div>
             <div>telefoon: " . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
-            <div> 
-                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>";
+            <div> ";
                 if($row['status'] == 0){
-                  echo"<p style='color:Red;'>Uitgeleend</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
+                  echo"  <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm2'>Lever in</a>
+                 <p style='color:Red;'>Uitgeleend</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                   </div>";
               }else{
-                echo"<p style='color:Green;'>Beschikbaar</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
+                echo" <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>
+                <p style='color:Green;'>Beschikbaar</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                 </div>";
         }}}
        
@@ -113,6 +114,24 @@ if (isset($_POST['Zoek'])) {
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";    
 ?>
+
+<div class="Form-popup2" id="myForm2">
+  <form action="" method="POST" class="Lever-in">
+
+
+   <textarea class="opmerking2" placeholder="Opmerking" name="opmerking" ></textarea> <br> <br> <br>
+
+    <button name="submit" class="Maak_aan_knop">Lever in</button>
+    <a type="button" class="sluitknop" href="/Uitleenregistratiesysteem/Apparaten%20overzicht.php#">&times;</a>
+  </form>
+</div>
+
+</body>
+</html>
+
+
+
+
 
 <div class="form-popup" id="myForm">
   <form action="" method="POST" class="form-apparaten-overzicht">
