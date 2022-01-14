@@ -95,8 +95,9 @@ if (isset($_POST['Zoek'])) {
       echo "
       
       <div class='nested'>
-            <div>" . $row['Categorie'] . "</div>
-            <div>" . $row['Apparaatnaam'] . "</div>
+      
+            <div>catagorie: " . $row['Categorie'] . "</div>
+            <div>telefoon: " . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> 
                 <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>";
