@@ -81,24 +81,28 @@ echo "
         
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
-      <form action="#" class="search-box">
-        <input type="text" placeholder="Type Something to Search..." required>
+      <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="search-box">
+        <input type="text" placeholder="Type Something to Search..." name="Zoekbar">
         <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
   </div>
 <?php
-
-
-//verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
-include "nieuwe_categorie_popup.php";
-
-
-
 echo "<br><br><br><div class='apparatencontainer'>";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
+  $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']);
+  
+    if (empty($Zoekresult)) {
+    
+        $sql = "SELECT * FROM apparaten";
+        
+    } else {
+      
+      $sql = "SELECT * FROM apparaten WHERE Categorie like '$Zoekresult%' or Apparaatnaam like '$Zoekresult%'";
 
-    $sql = "SELECT * FROM apparaten";
-    if ($result = $conn->query($sql)) {
+    }
+      if ($result = $conn->query($sql)) {
       foreach ($result as $row) {
       echo "
       
@@ -115,8 +119,10 @@ echo "<br><br><br><div class='apparatencontainer'>";
                 echo"<p>Beschikbaar</p> </div>
                 </div>";
         }}}
-      echo "</div>";     
-    
+      echo "</div>";    
+} 
+//verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
+include "nieuwe_categorie_popup.php";    
 ?>
 <!DOCTYPE html>
 <html lang="en">

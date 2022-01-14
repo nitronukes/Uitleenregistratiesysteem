@@ -38,7 +38,7 @@
 
 //connectie maken met de database
 Include "configure.php";
-Include "login.css";
+
 session_start();
 
 //info uit de database halen
@@ -104,7 +104,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
       }}}
     echo "</div>";      
     
-?>
+?>Include "login.css";
 <!DOCTYPE html>
 <html lang="en">
 <head>
