@@ -68,7 +68,7 @@ echo "
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>" class="search-box">
-        <input type="text" placeholder="Type Something to Search..." name="Zoekbar">
+        <input type="text" placeholder="Typ iets om te zoeken..." name="Zoekbar">
         <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
@@ -99,7 +99,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
             <div>" . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> 
-                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>;";
+                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>";
                 if($row['status'] == 0){
                   echo"<p>Uitgeleend</p> </div>
                   </div>";
@@ -108,8 +108,6 @@ echo "<br><br><br><div class='apparatencontainer'>";
                 </div>";
         }}}
        
-     
-      
        echo "</div>";  
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";    
@@ -131,7 +129,8 @@ include "nieuwe_categorie_popup.php";
 </html>
 <?php
 if (isset($_POST['submit'])) {
-  
+  header("location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
+
 
   $apparaat= $_GET['apparaat'];
   $retouneerdatum = $_POST['Retouneer']; 

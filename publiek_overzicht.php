@@ -69,7 +69,7 @@ echo "
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form action="#" class="search-box">
-        <input type="text" placeholder="Type Something to Search..." required>
+        <input type="text" placeholder="Typ iets om te zoeken..." required>
         <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
@@ -92,7 +92,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
       <div class='nested'>
             <div>" . $row['Categorie'] . "</div>
             <div>" . $row['Apparaatnaam'] . "</div>
-            <div><img class='Image' src=img/" . $row['Afbeelding'] . "></div>
+            <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> <br>";
             if($row['status'] == 0){
                 echo"<p>Uitgeleend</p> </div>
