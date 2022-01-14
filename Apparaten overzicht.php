@@ -110,7 +110,6 @@ echo "<br><br><br><div class='apparatencontainer'>";
       </div>";
       }}
     echo "</div>";
-      
 
 ?>
 <!DOCTYPE html>
