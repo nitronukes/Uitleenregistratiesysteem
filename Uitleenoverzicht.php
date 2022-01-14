@@ -1,87 +1,35 @@
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>header</title>
+  <title>Uitleenoverzicht</title>
   <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="Uitleenoverzicht.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
   <div class="wrapper">
     <nav>
- 
-     
       <div class="content">
-      <div class="logo"><a href="#">Rocfriesepoort</a></div>
+      <div class="logo"><a href="#">Rocfriesepoort</a>
+      </div>
         <ul class="links">
-     
-          
-  
-      
-           
-            <ul class="drop-menu">
-              
-
-
-
-             
-            </ul>
-            
-            <li><a href="login.php">Loguit</a></li>   
+          <li><a href="login.php">Loguit</a></li>   
           <li><a href="#">Uitleenoverzicht</a></li>
           <li><a href="Apparaten overzicht.php">Apperatuuroverzicht</a></li>
-       
-        
       </div>
     </nav>
   </div>
-    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<head>
-<link rel="stylesheet" href="Uitleenoverzicht.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-
-</head>
-<body>
     <?php
     
 //connectie maken met de database 
 include 'configure.php';
 
 session_start();
-//info uit de databse halen
+//info uit de database halen
 $sql = "SELECT `Naam`, `Docent`, `Apparaat`, `uitleendatum`, `inleverdatum` FROM uitleen";
 $result = $conn->query($sql);
 //header van de tabel

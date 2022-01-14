@@ -38,7 +38,6 @@
 
 //connectie maken met de database
 Include "configure.php";
-
 session_start();
 
 //info uit de database halen
@@ -47,7 +46,7 @@ $result2 = $conn->query($sql3);
 //header van de tabel
 foreach ($result2 as $row2) {
 echo "
-<li><p>" . $row2['Naam']  . " <button><a class='far fa-edit' style='background:#171c24;' href='?categorie=" . $row2['Naam'] . "#categorieNIEUW'></a></button></p></li>
+<li><p>" . $row2['Naam']  . "</p></li>
 
 
 
@@ -79,7 +78,7 @@ echo "
 
 
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
-include "nieuwe_categorie_popup.php";
+
 
 
 
