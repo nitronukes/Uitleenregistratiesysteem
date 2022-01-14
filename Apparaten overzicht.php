@@ -39,6 +39,7 @@
             <ul class="drop-menu">
               <li><a href="#">Beschikbaar</a></li>
               <li><a href="#">Uitgeleend</a></li>
+              <li><a href="#"></a></li>
             </ul>
           </li>
           <li>
@@ -69,13 +70,14 @@ echo "
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="search-box">
         <input type="text" placeholder="Type Something to Search..." name="Zoekbar">
-        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+        <button name="Zoekbarenter"type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
   </div>
 <?php
 echo "<br><br><br><div class='apparatencontainer'>";
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['Zoekbarenter'])) { 
+
   
   $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']);
   
@@ -111,6 +113,7 @@ echo "<br><br><br><div class='apparatencontainer'>";
      
       
        echo "</div>";  
+      
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";    
 ?>
