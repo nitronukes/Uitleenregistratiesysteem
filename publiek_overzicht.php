@@ -90,8 +90,8 @@ echo "<br><br><br><div class='apparatencontainer'>";
       echo "
       
       <div class='nested'>
-            <div>" . $row['Categorie'] . "</div>
-            <div>" . $row['Apparaatnaam'] . "</div>
+      <div>catagorie: " . $row['Categorie'] . "</div>
+      <div>apparaat: " . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> <br>";
             if($row['status'] == 0){

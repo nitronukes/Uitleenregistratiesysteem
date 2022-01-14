@@ -99,15 +99,21 @@ if (isset($_POST['Zoekbarenter'])) {
       
             <div>catagorie: " . $row['Categorie'] . "</div>
             <div>apparaat: " . $row['Apparaatnaam'] . "</div>
-            <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
-            <div> ";
+            <div ><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
+            <div > ";
                 if($row['status'] == 0){
-                  echo"  <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm2'>Lever in</a>
-                 <p style='color:Red;'>Uitgeleend</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
+                  echo"                   
+                  <p style='color:Red; text-decoration:underline;'>Uitgeleend</p>
+                  <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm2'>Lever in</a> <br>
+                  <a style='color:black; float:left; margin-left:1%;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a>
+
+                 </div>
                   </div>";
               }else{
-                echo" <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>
-                <p style='color:Green;'>Beschikbaar</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
+                echo" 
+                <p style='color:Green; text-decoration:underline;'>Beschikbaar</p>
+                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a> <br>
+                <a style='color:black; float:left; margin-left:1%;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                 </div>";
         }}}
        
