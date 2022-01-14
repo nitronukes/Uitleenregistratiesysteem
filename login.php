@@ -2,7 +2,7 @@
 
 session_start();
 
-	include("connection.php");
+	include("configure.php");
 	include("functions.php");
 
 
@@ -17,7 +17,7 @@ session_start();
 
 			//lezen van database
 			$query = "select * from users where user_name = '$user_name' limit 1";
-			$result = mysqli_query($con, $query);
+			$result = mysqli_query($conn, $query);
 
 			if($result)
 			{
@@ -48,7 +48,7 @@ session_start();
 
 <!DOCTYPE html>
 <html>
-<head>
+<head> <br> <br> <br>
 	<title>Login</title>
 	<link rel="stylesheet" href="login.css">
 </head>
@@ -70,16 +70,18 @@ session_start();
 		padding: 10px;
 		width: 100px;
 		color: white;
-		background-color: red;
+		background-color: #005da4;
 		border: none;
 	}
 
 	#box{
 
-		background-color: black;
+		background-color: #505050;
+		box-shadow: 0px 25px 25px rgb(51, 51, 51);
 		margin: auto;
 		width: 300px;
 		padding: 20px;
+		border-radius:5px;
 	}
 	
 	</style>
@@ -89,12 +91,12 @@ session_start();
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px;color: white;">Login</div>
 
-			<input placeolder="username" id="text" type="text" name="user_name"><br><br>
-			<input id="text" type="password" name="password"><br><br>
+			<input placeholder="gebruikersnaam" id="text" type="text" name="user_name"><br><br>
+			<input placeholder="wachtwoord" id="text" type="password" name="password"><br><br>
 
 			<input id="button" type="submit" value="Login"><br><br>
 
-			<p class="login-tekst"> ben je geen docent? <a class="geen-docent" href="Apparatuur overzicht.php">klik hier</a><br><br> </p>
+			<p class="login-tekst"> ben je geen docent? <a class="geen-docent" href="publiek_overzicht.php">klik hier</a><br><br> </p>
 		</form>
 	</div>
 </body>

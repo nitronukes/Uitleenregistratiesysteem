@@ -229,7 +229,7 @@
       ". . .";
       text-align: center;
       margin: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Poppins', sans-serif;
 
       
   }/* De grid/lay out van de apparaten in apparatenoverzicht*/
@@ -253,7 +253,7 @@
 
 border-top: 2.5px solid black;
 border-bottom: 2.5px solid black;
-background-color: #215da1;
+background-color: #ffffff;
 
   @media(max-width:570px){
 
@@ -354,9 +354,15 @@ background-color: #215da1;
 .form-popup:target {
   visibility: visible;
   opacity: 1;
+
 }
 input[type="date"]{
   background-color: #505050;
   width: 100%;
   text-align: center;
+}
+
+.Image-AO {
+  width: 100%;
+  height: 100%;
 }

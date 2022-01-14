@@ -1,126 +1,40 @@
-<!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>header</title>
+  <title>Uitleenoverzicht</title>
   <link rel="stylesheet" href="header.css">
+  <link rel="stylesheet" href="Uitleenoverzicht.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 <body>
   <div class="wrapper">
     <nav>
-      <input type="checkbox" id="show-search">
-      <input type="checkbox" id="show-menu">
-      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
       <div class="content">
-      <div class="logo"><a href="#">Rocfriesepoort</a></div>
-        <ul class="links">
-          <li>
-            <a href="#" class="desktop-item">Nieuw</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Nieuw</label>
-            <ul class="drop-menu">
-              <li><a href="#apparaat">apparaat</a></li>
-              <li><a href="#">Categorie</a></li>
-           
-            </ul>
-            
-          </li>
-          <li>
-            <a href="#" class="desktop-item">Sorteer</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Sorteer</label>
-            <ul class="drop-menu">
-              <li><a href="#">Beschikbaar</a></li>
-              <li><a href="#">Uitgeleend</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" class="desktop-item">Categorie</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Categorie</label>
-            <ul class="drop-menu">
-              <li><a href="#">Laptops</a></li>
-              <li><a href="#">Printers</a></li>
-              <li><a href="#">Drones</a></li>
-              <li><a href="#">Camera's</a></li>
-            </ul>
-            
-          </li>
-          
-        </ul>
+      <div class="logo"><a href="#">Rocfriesepoort</a>
       </div>
-      <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
-      <form action="#" class="search-box">
-        <input type="text" placeholder="Type Something to Search..." required>
-        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
-      </form>
+        <ul class="links">
+          <li><a href="login.php">Loguit</a></li>   
+          <li><a href="#">Uitleenoverzicht</a></li>
+          <li><a href="Apparaten overzicht.php">Apperatuuroverzicht</a></li>
+      </div>
     </nav>
   </div>
-  
-  
-  
-    <div class="form-popup" id="apparaat">
-      <form action="" method="POST" class="Lever-in">
-     <center>   <p class="Nieuw"> Nieuwe Categorie </p> </center>
-    
-    
-      <textarea class="opmerking" placeholder="Opmerking" name="opmerking" ></textarea> <br> <br> <br>
-    
-        <button name="submit" class="leverinknop">Lever in</button>
-        <a type="button" class="sluitknop" href="#">&times;</a>
-      </form>
-    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
-<head>
-<link rel="stylesheet" href="Uitleenoverzicht.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
-
-</head>
-<body>
     <?php
     
 //connectie maken met de database 
 include 'configure.php';
 
 session_start();
-//info uit de databse halen
+//info uit de database halen
 $sql = "SELECT `Naam`, `Docent`, `Apparaat`, `uitleendatum`, `inleverdatum` FROM uitleen";
 $result = $conn->query($sql);
 //header van de tabel
 echo "
-<h2>Uitleenoverzicht</h2>
+<br><br><br><br><br><br><br><br>
 <div class='table-wrapper'>
     <table class='fl-table'>
         <thead>
