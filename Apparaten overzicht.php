@@ -39,6 +39,7 @@
             <ul class="drop-menu">
               <li><a href="#">Beschikbaar</a></li>
               <li><a href="#">Uitgeleend</a></li>
+              <li><a href="#"></a></li>
             </ul>
           </li>
           <li>
@@ -67,15 +68,16 @@ echo "
         </ul>
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
-      <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>" class="search-box">
-        <input type="text" placeholder="Typ iets om te zoeken..." name="Zoekbar">
-        <button type="submit" name="Zoek" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+      <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="search-box">
+        <input type="text" placeholder="Type Something to Search..." name="Zoekbar">
+        <button name="Zoekbarenter"type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
   </div>
 <?php
 echo "<br><br><br><div class='apparatencontainer'>";
-if (isset($_POST['Zoek'])) {
+if (isset($_POST['Zoekbarenter'])) { 
+
   
   $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']);
   
@@ -97,7 +99,7 @@ if (isset($_POST['Zoek'])) {
       <div class='nested'>
       
             <div>catagorie: " . $row['Categorie'] . "</div>
-            <div>telefoon: " . $row['Apparaatnaam'] . "</div>
+            <div>apparaat: " . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> ";
                 if($row['status'] == 0){
@@ -111,6 +113,7 @@ if (isset($_POST['Zoek'])) {
         }}}
        
        echo "</div>";  
+      
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";    
 ?>
