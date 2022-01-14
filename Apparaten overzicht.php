@@ -75,7 +75,7 @@ echo "
   </div>
 <?php
 echo "<br><br><br><div class='apparatencontainer'>";
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
   $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']);
   
@@ -87,7 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
       $sql = "SELECT * FROM apparaten WHERE Categorie like '$Zoekresult%' or Apparaatnaam like '$Zoekresult%'";
 
-    }
+    } } else {
+        $sql = "SELECT * FROM apparaten";
+      }
       if ($result = $conn->query($sql)) {
       foreach ($result as $row) {
       echo "
@@ -105,8 +107,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo"<p>Beschikbaar</p> </div>
                 </div>";
         }}}
-      echo "</div>";    
-} 
+       
+     
+      
+       echo "</div>";  
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";    
 ?>
