@@ -69,13 +69,13 @@ echo "
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>" class="search-box">
         <input type="text" placeholder="Typ iets om te zoeken..." name="Zoekbar">
-        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+        <button type="submit" name="Zoek" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
   </div>
 <?php
 echo "<br><br><br><div class='apparatencontainer'>";
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['Zoek'])) {
   
   $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']);
   
