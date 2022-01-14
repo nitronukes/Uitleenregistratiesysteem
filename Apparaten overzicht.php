@@ -101,7 +101,7 @@ if (isset($_POST['Zoekbarenter'])) {
             <div>" . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> 
-                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>;";
+                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>";
                 if($row['status'] == 0){
                   echo"<p>Uitgeleend</p> </div>
                   </div>";
@@ -110,8 +110,6 @@ if (isset($_POST['Zoekbarenter'])) {
                 </div>";
         }}}
        
-     
-      
        echo "</div>";  
       
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
@@ -134,7 +132,8 @@ include "nieuwe_categorie_popup.php";
 </html>
 <?php
 if (isset($_POST['submit'])) {
-  
+  header("location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
+
 
   $apparaat= $_GET['apparaat'];
   $retouneerdatum = $_POST['Retouneer']; 
