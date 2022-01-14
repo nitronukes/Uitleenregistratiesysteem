@@ -1,10 +1,24 @@
+<?php
+        $sql = "SELECT * FROM apparaten";
+        if ($result = $conn->query($sql)) {
+        foreach ($result as $row) {
+echo"<div class='Cat-popup' id='opmerking'>
+      <form action='' method='POST' class='Lever-in'>
+     <center>   <p class='Nieuw'> opmerking </p> <br>    
+     <textarea class='opmerking' placeholder=' " . $row['opmerking'] . "' readonly          ></textarea>      <br> <br> <br>
+      </center>
+        <a type='button' class='sluitknop' href='#'>&times;</a>
+      </form>
+    </div>";
+        }}
+?>
   <!-- de (frontend) popup voor als je op nieuw apparaat klikt -->
   <div class="Cat-popup" id="apparaat">
       <form action="" method="POST" class="Lever-in">
      <center>   <p class="Nieuw"> Nieuw Apparaat </p> <br>
     
     
-      <input type="text" class="naam_categorie" placeholder="naam" name="nieuwe_categorie" required >
+      <input type="text" class="naam_categorie" placeholder="naam" name="nieuw_categorie" required >
       <select name="dropdown">
             <option disabled hidden selected value = "categorie">categorie</option>
 <?php
@@ -30,7 +44,7 @@ echo "
       
       </center>
 
-        <button name="submitten" class="Maak_aan_knop">Maak aan</button>
+        <button name="MAAK_AAN" class="Maak_aan_knop">Maak aan</button>
         <a type="button" class="sluitknop" href="#">&times;</a>
       </form>
     </div>
@@ -66,9 +80,18 @@ echo "
 
 <?php
 
-if (isset($_POST['submitten'])) {
+if (isset($_POST['MAAK_AAN'])) {
+  $naam=$_POST['nieuw_categorie']; 
+  $Catte=$_POST['dropdown'];
   
-}
+    $sql7 = "INSERT INTO `apparaten`(`Categorie`, `Apparaatnaam`, `Afbeelding`, `opmerking`, `status`) VALUES ('$Catte','$naam','doet het niet','','1')";
+    $insert7 = $conn->query($sql7);
+  
+    if ( $insert7 ) {
+  
+      header("location:#");
+  
+  }}
 
 
 //als er in de popup van nieuwe categorie geklikt wordt dan word het onderstaande uitgevoert en wordt de ingevulde naam in de table van categorieen gezet
