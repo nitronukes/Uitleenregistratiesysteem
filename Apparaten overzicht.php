@@ -39,7 +39,6 @@
             <ul class="drop-menu">
               <li><a href="#">Beschikbaar</a></li>
               <li><a href="#">Uitgeleend</a></li>
-              <li><a href="#"></a></li>
             </ul>
           </li>
           <li>
