@@ -69,13 +69,14 @@ echo "
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
       <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="search-box">
         <input type="text" placeholder="Type Something to Search..." name="Zoekbar">
-        <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
+        <button name="Zoekbarenter"type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
     </nav>
   </div>
 <?php
 echo "<br><br><br><div class='apparatencontainer'>";
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['Zoekbarenter'])) { 
+
   
   $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']);
   
@@ -95,25 +96,44 @@ echo "<br><br><br><div class='apparatencontainer'>";
       echo "
       
       <div class='nested'>
-            <div>" . $row['Categorie'] . "</div>
-            <div>" . $row['Apparaatnaam'] . "</div>
+      
+            <div>catagorie: " . $row['Categorie'] . "</div>
+            <div>apparaat: " . $row['Apparaatnaam'] . "</div>
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
-            <div> 
-                <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>;";
+            <div> ";
                 if($row['status'] == 0){
-                  echo"<p>Uitgeleend</p> </div>
+                  echo"  <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm2'>Lever in</a>
+                 <p style='color:Red;'>Uitgeleend</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                   </div>";
               }else{
-                echo"<p>Beschikbaar</p> </div>
+                echo" <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>
+                <p style='color:Green;'>Beschikbaar</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                 </div>";
         }}}
        
-     
-      
        echo "</div>";  
+      
 //verwijzing naar de pagina "nieuwe_categorie_popup.php", daar staat de code van de nieuwe categorie popup in.
 include "nieuwe_categorie_popup.php";    
 ?>
+
+<div class="Form-popup2" id="myForm2">
+  <form action="" method="POST" class="Lever-in">
+
+
+   <textarea class="opmerking2" placeholder="Opmerking" name="opmerking" ></textarea> <br> <br> <br>
+
+    <button name="submit" class="Maak_aan_knop">Lever in</button>
+    <a type="button" class="sluitknop" href="/Uitleenregistratiesysteem/Apparaten%20overzicht.php#">&times;</a>
+  </form>
+</div>
+
+</body>
+</html>
+
+
+
+
 
 <div class="form-popup" id="myForm">
   <form action="" method="POST" class="form-apparaten-overzicht">
@@ -131,7 +151,8 @@ include "nieuwe_categorie_popup.php";
 </html>
 <?php
 if (isset($_POST['submit'])) {
-  
+  header("location:/Uitleenregistratiesysteem/Apparaten%20overzicht.php#");
+
 
   $apparaat= $_GET['apparaat'];
   $retouneerdatum = $_POST['Retouneer']; 
