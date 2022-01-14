@@ -95,10 +95,10 @@ echo "<br><br><br><div class='apparatencontainer'>";
             <div><img class='Image-AO' src=img/" . $row['Afbeelding'] . "></div>
             <div> <br>";
             if($row['status'] == 0){
-                echo"<p style='color:Red;'>Uitgeleend</p> </div>
+                echo"<p style='color:Red; text-decoration:underline;'>Uitgeleend</p> </div>
                 </div>";
             }else{
-              echo"<p style='color:Green;'> Beschikbaar</p> </div>
+              echo"<p style='color:Green; text-decoration:underline;'> Beschikbaar</p> </div>
               </div>";
       }}}
     echo "</div>";      

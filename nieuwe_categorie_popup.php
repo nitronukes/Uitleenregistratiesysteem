@@ -1,5 +1,7 @@
 <?php
-        $sql = "SELECT * FROM apparaten";
+$opmerkingg=$_GET['apparaat'];
+
+        $sql = "SELECT * FROM apparaten WHERE Apparaatnaam='$opmerkingg'";
         if ($result = $conn->query($sql)) {
         foreach ($result as $row) {
 echo"<div class='Cat-popup' id='opmerking'>
