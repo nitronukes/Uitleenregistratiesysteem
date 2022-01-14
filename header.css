@@ -337,3 +337,14 @@ input[type="file"] {
   opacity: 0.8;
   color: white;
 }
+.opmerking{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  width: 50%;
+  height: 70px;
+  margin-left: 1%;
+  margin-top: 5%;
+  resize: vertical;
+ }

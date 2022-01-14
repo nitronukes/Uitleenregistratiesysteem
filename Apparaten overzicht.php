@@ -101,10 +101,10 @@ if (isset($_POST['Zoek'])) {
             <div> 
                 <a type='button' class='open-button' href='?apparaat=" . $row['Apparaatnaam'] . "#myForm'>Leen uit</a>";
                 if($row['status'] == 0){
-                  echo"<p>Uitgeleend</p> </div>
+                  echo"<p style='color:Red;'>Uitgeleend</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                   </div>";
               }else{
-                echo"<p>Beschikbaar</p> </div>
+                echo"<p style='color:Green;'>Beschikbaar</p> <a style='color:black;' class='fas fa-info-circle' href='?apparaat=" . $row['Apparaatnaam'] . "#opmerking'></a></div>
                 </div>";
         }}}
        
