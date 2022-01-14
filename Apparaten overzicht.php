@@ -67,7 +67,7 @@ echo "
         </ul>
       </div>
       <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
-      <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" class="search-box">
+      <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>" class="search-box">
         <input type="text" placeholder="Type Something to Search..." name="Zoekbar">
         <button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
       </form>
