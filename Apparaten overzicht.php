@@ -37,8 +37,8 @@
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Sorteer</label>
             <ul class="drop-menu">
-              <li><a href="#">Beschikbaar</a></li>
-              <li><a href="#">Uitgeleend</a></li>
+              <li><a><form method="POST" action=""><input type='button' name='sorteer'>Beschikbaar</form></a></li>
+              <li><a><form>Uitgeleend</form></a></li>
             </ul>
           </li>
           <li>
@@ -55,10 +55,15 @@ Include "configure.php";
 session_start();
 
 //info uit de database halen
+
+
+
 $sql3 = "SELECT `Naam` FROM categorieen";
 $result2 = $conn->query($sql3);
 //header van de tabel
 foreach ($result2 as $row2) {
+
+
 echo "
 <li><p>" . $row2['Naam']  . " <button><a class='far fa-edit' style='background:#171c24;' href='?categorie=" . $row2['Naam'] . "#categorieNIEUW'></a></button></p></li>";
 }
@@ -75,6 +80,7 @@ echo "
   </div>
 <?php
 echo "<br><br><br><div class='apparatencontainer'>";
+
 if (isset($_POST['Zoekbarenter'])) { 
 
   
