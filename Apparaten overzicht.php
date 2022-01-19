@@ -164,7 +164,7 @@ if (isset($_POST['submit'])) {
   $retouneerdatum = $_POST['Retouneer']; 
   $docent = $_POST['Docent']; 
   $leerlingnmr = $_POST['Leerlingnmr']; 
-  $datum=date('d-m-Y');
+  $datum=date('d-m-Y'); 
 
   
   
