@@ -75,23 +75,23 @@ echo "
   </div>
 <?php
 echo "<br><br><br><div class='apparatencontainer'>";
-if (isset($_POST['Zoekbarenter'])) { 
+if (isset($_POST['Zoekbarenter'])) {  //checken of de value iets anders is dan null
 
   
-  $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']);
+  $Zoekresult = htmlspecialchars($_REQUEST['Zoekbar']); //Hij stop de value van wat er is ingevult in de vaariable
   
-    if (empty($Zoekresult)) {
+    if (empty($Zoekresult)) { //Als er geen value is voert hij dit uit
     
         $sql = "SELECT * FROM apparaten";
         
-    } else {
+    } else { //Als er wel een value is voert hij dit uit
       
       $sql = "SELECT * FROM apparaten WHERE Categorie like '$Zoekresult%' or Apparaatnaam like '$Zoekresult%'";
 
-    } } else {
+    } } else { //Als er nog niks is gesubmit word dit uit gevoerd
         $sql = "SELECT * FROM apparaten";
       }
-      if ($result = $conn->query($sql)) {
+      if ($result = $conn->query($sql)) { 
       foreach ($result as $row) {
       echo "
       
