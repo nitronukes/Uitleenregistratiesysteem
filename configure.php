@@ -1,9 +1,9 @@
 <?php 
 
 $server = "localhost";
-$user = "root";
-$pass = "";
-$dbname = "uitleenregistratiesysteem";
+$user = "deb85590_p22t4";
+$pass = "kgNPgni7WW";
+$dbname = "deb85590_p22t4";
 
 $conn = mysqli_connect($server, $user, $pass, $dbname);
 
